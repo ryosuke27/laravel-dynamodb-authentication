@@ -1,0 +1,11 @@
+{
+    "name": "ryosuke27/laravel-dynamodb-authentication",
+    "description": "Laravel and DynamoDB make authentication",
+    "type": "n",
+    "license": "n",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.1.0",
+        "laravel/framework": "~9.2"
+    }
+}
