@@ -11,7 +11,7 @@ Laravel が用意している認証機能をそのまま利用することがで
 ## セットアップ
 
 driver を dynamoDbProvider に変更
-config/auth.php
+**config/auth.php**
 
 ```
  'users' => [
@@ -21,7 +21,7 @@ config/auth.php
 ```
 
 AuthServiceProviderの設定をdynamoDbProviderに変更
-app/Providers/AuthServiceProvider.php
+**app/Providers/AuthServiceProvider.php**
 
 ```
  public function boot()
