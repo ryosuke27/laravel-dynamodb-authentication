@@ -12,6 +12,7 @@ namespace App\Providers;
 use App\Models\User;
 use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Support\Facades\Hash;
 
 class DynamoDbProvider implements UserProvider
 {
@@ -38,7 +39,6 @@ class DynamoDbProvider implements UserProvider
 
     public function retrieveByCredentials(array $credentials)
     {
-
         $email = $credentials['email'];
         $user = User::where('email', $email)->first();
         return $user;
@@ -47,10 +47,7 @@ class DynamoDbProvider implements UserProvider
 
     public function validateCredentials(Authenticatable $user, array $credentials)
     {
-
         $password = $credentials['password'];
-        // $password = hash('sha256', $password);
-
-        return $user->password == $password;
+        return Hash::check($password, $user->password);
     }
 }
